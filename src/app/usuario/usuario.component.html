@@ -1,0 +1,26 @@
+<h2>Lista de usuarios</h2>
+
+<table>
+
+    <tr>
+        <th>id</th>
+        <th>nome</th>
+        <th>idade</th>
+    </tr>
+
+    <tr *ngFor="let usuario of Usuarios">
+        <th>{{usuario.id}}</th>
+        <th>{{usuario.nome}}</th>
+        <th>{{usuario.idade}}</th>
+        <button (click)="remover(usuario.id)">remover</button>
+    </tr>
+
+</table>
+
+<h2>cadastro</h2>
+
+<form>
+    <p>Nome: <input type="text" name="nome" [(ngModel)]="Usuario.nome"></p>
+    Idade: <input type="text" name="idade" [(ngModel)]="Usuario.idade">
+    <p></p><button (click)="cadastrar()">Cadastrar</button>
+</form>
